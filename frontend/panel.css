@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #18181b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.now-playing-link,
+.history-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.now-playing {
+    width: 300px;
+    background: #1DB954;
+    padding: 6px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.not-configured {
+    width: 300px;
+    background: #c90000;
+    padding: 6px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.songTitle {
+    font-weight: bold;
+}
+
+.history {
+    width: 300px;
+}
+
+.history-item {
+    background: #282828;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease-out;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.flip-container {
+    width: 50px;
+    height: 50px;
+    perspective: 1000px;
+    display: inline-block;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.now-playing-link:hover .flipper,
+.history-link:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 3px 0;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+}
