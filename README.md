@@ -1,7 +1,7 @@
 # Spotify Now Playing Twitch Extension 🎶
 
 <p align="center">
-<img src="https://github.com/SeriousDots/twitch-spotify-widget/50d556.gif" alt="Twitch Spotify Extension"/>
+<img src="/50d556.gif" alt="Twitch Spotify Extension"/>
 </p>
   
 ## ✨ Features
