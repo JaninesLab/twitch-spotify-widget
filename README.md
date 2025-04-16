@@ -56,8 +56,8 @@ Follow these steps to set up the extension for development or deployment.
         ````
         It also could be possible that you need the following endpoints specified: 
         ```
-        https://<your-railway-app-url>/spotify/disconnect, 
-        https://<your-railway-app-url>/spotify/status and 
+        https://<your-railway-app-url>/spotify/disconnect
+        https://<your-railway-app-url>/spotify/status
         https://<your-railway-app-url>/spotify/auth_callback
         ```
     * You also need the following Spotify URL in **`Allowlist config Urls`**:
