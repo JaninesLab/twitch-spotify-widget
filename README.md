@@ -50,13 +50,17 @@ Follow these steps to set up the extension for development or deployment.
 * Note down your extension's **Client ID** and **Extension ID**.
 * **Asset Hosting:** Upload your frontend files (`config.html`, `config.js`, `panel.html`, `viewer.js`, CSS, images like `na.png`, `spotify.png`) as a ZIP file for each version you create. Set the "Panel Viewer Path" and "Configuration Path".
 * **Capabilities / Content Security Policy (CSP):**
-    * Add your Railway app's base URL to the **`connect-src`** directive in the CSP. Example:
+    * Add your Railway app's base URL to the **`Allowlist config Urls`**, **`Allowlist panel Urls`** and **`Allowlist for URL Fetching Domains`** directive in the CSP. Example:
         ```
-        connect-src 'self' https://<your-extension-id>.ext-twitch.tv [https://api.twitch.tv](https://api.twitch.tv) wss://pubsub-edge.twitch.tv https://<your-railway-app-url>;
+        https://<your-railway-app-url> (It also could be possible that you need the following endpoints specified: https://<your-railway-app-url>/spotify/disconnect, https://<your-railway-app-url>/spotify/status and https://<your-railway-app-url>/spotify/auth_callback)
         ```
-    * Add Spotify's image CDN to the **`img-src`** directive:
+    * You also need the following Spotify URL in **`Allowlist config Urls`**:
         ```
-        img-src 'self' https://<your-extension-id>.ext-twitch.tv [https://static-cdn.jtvnw.net](https://static-cdn.jtvnw.net) [https://i.scdn.co/](https://i.scdn.co/) data:;
+        https://accounts.spotify.com
+        ```
+    * Add Spotify's image CDN to the **`Allowlist for Image Domains`** directive:
+        ```
+        https://i.scdn.co/image, https://i.scdn.co/
         ```
 * **Testing:** Set a version to "Hosted Test" for development.
 
